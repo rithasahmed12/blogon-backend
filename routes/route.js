@@ -16,8 +16,8 @@ import { protect } from '../middlewares/authMiddleware.js';
 router.post('/signup',registerUser); 
 router.post('/login',authUser);
 
-router.route('/post').get(protect,getAllBlogs).post(protect,upload.single('image'), addNewBlog);
-router.route('/post/:id').put(protect,upload.single('image'), updateBlog).delete(protect,deleteBlog).get(protect,getBlog);
+router.route('/post').get(getAllBlogs).post(protect,upload.single('image'), addNewBlog);
+router.route('/post/:id').put(protect,upload.single('image'), updateBlog).delete(protect,deleteBlog).get(getBlog);
 
 
 export default router
